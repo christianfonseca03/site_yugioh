@@ -8,6 +8,7 @@ import { FormEvent } from "react";
 
 import { handleSearchCard } from "../utils/handleSearchCard";
 import { Card } from "../types/card";
+import { HeaderButton } from "./HeaderButton";
 
 interface HeaderProps {
   setCard: (card: Card) => void;
@@ -56,13 +57,9 @@ export function Header(props: HeaderProps) {
         </button>
       </form>
 
-      <nav className="flex items-center">
-        <button>
-          <Image src={UserIcon} alt="User" className="h-16 w-16 mx-5"></Image>
-        </button>
-        <button>
-          <Image src={Decks} alt="Decks" className="h-16 w-16 mx-5"></Image>
-        </button>
+      <nav className="flex">
+        <HeaderButton img={UserIcon.src} text="Login" altText="User Icon Img"/>
+        <HeaderButton img={Decks.src} text="Decks" altText="Decks Img"/>
       </nav>
     </header>
   );
