@@ -3,7 +3,7 @@ interface StepsProps {
     altText: string;
     text: string;
 }
-
+//haha
 export function Steps({img,altText,text}:StepsProps) {
     return (
         <section className="relative justify-center items-center">
