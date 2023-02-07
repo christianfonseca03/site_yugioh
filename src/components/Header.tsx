@@ -9,7 +9,6 @@ import { FormEvent } from "react";
 import { handleSearchCard } from "../utils/handleSearchCard";
 import { Card } from "../types/card";
 import { HeaderButton } from "./HeaderButton";
-//haha
 
 interface HeaderProps {
   setCard: (card: Card) => void;
@@ -29,14 +28,19 @@ export function Header(props: HeaderProps) {
   }
 
   function refreshPage() {
-    window.location.reload()
+    window.location.reload();
   }
 
   return (
     <header className="flex justify-between items-center px-10 bg-gradient-to-b from-neutral-400 to-white ">
       <Link href=".">
         <>
-          <Image src={Logo} alt="Logo" className="h-36 w-36" onClick={refreshPage}></Image>
+          <Image
+            src={Logo}
+            alt="Logo"
+            className="h-36 w-36"
+            onClick={refreshPage}
+          ></Image>
         </>
       </Link>
       <form
@@ -59,8 +63,8 @@ export function Header(props: HeaderProps) {
       </form>
 
       <nav className="flex">
-        <HeaderButton img={UserIcon.src} text="Login" altText="User Icon Img"/>
-        <HeaderButton img={Decks.src} text="Decks" altText="Decks Img"/>
+        <HeaderButton img={UserIcon.src} text="Login" altText="User Icon Img" />
+        <HeaderButton img={Decks.src} text="Decks" altText="Decks Img" />
       </nav>
     </header>
   );

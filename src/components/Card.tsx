@@ -6,7 +6,6 @@ interface CardProps {
 }
 
 export function Card({ card }: CardProps) {
-  //props receberia um card, desestruturei a props pegando o card direto para nao precisar usar props.card
   const spell = ["spell"].includes(card.frameType);
   const trap = ["trap"].includes(card.frameType);
 
