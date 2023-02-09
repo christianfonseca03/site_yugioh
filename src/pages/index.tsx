@@ -40,19 +40,19 @@ export default function Home() {
 
               <Steps
                 img={Deck.src}
-                text="Create the decks you want to storage!"
+                text="Create the decks you want to storage"
                 altText="Decks"
               />
 
               <Steps
                 img={Search.src}
-                text="Search for cards and start building your decks!"
+                text="Search for cards and start building your decks"
                 altText="Search icon"
               />
 
               <Steps
                 img={DollarSign.src}
-                text="Keep track of your deck prices and individual cards too!"
+                text="Keep track of your deck prices and individual cards too"
                 altText="Dollar icon"
               />
             </ul>
