@@ -9,6 +9,7 @@ import { FormEvent } from "react";
 import { handleSearchCard } from "../utils/handleSearchCard";
 import { Card } from "../types/card";
 import { HeaderButton } from "./HeaderButton";
+import { signIn } from "next-auth/react";
 
 interface HeaderProps {
   setCard: (card: Card) => void;
@@ -29,6 +30,10 @@ export function Header(props: HeaderProps) {
 
   function refreshPage() {
     window.location.reload();
+  }
+
+  const handleLogin = () => {
+    signIn("google")
   }
 
   return (
@@ -63,7 +68,7 @@ export function Header(props: HeaderProps) {
       </form>
 
       <nav className="flex">
-        <HeaderButton img={UserIcon.src} text="Login" altText="User Icon Img" />
+        <HeaderButton img={UserIcon.src} text="Login" altText="User Icon Img" login={handleLogin} />
         <HeaderButton img={Decks.src} text="Decks" altText="Decks Img" />
       </nav>
     </header>
