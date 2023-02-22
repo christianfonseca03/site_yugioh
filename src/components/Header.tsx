@@ -10,6 +10,8 @@ import { handleSearchCard } from "../utils/handleSearchCard";
 import { Card } from "../types/card";
 import { HeaderButton } from "./HeaderButton";
 import { signIn } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { LoggedInBtn } from "./LoggedInBtn";
 
 interface HeaderProps {
   setCard: (card: Card) => void;
@@ -33,8 +35,10 @@ export function Header(props: HeaderProps) {
   }
 
   const handleLogin = () => {
-    signIn("google")
-  }
+    signIn("google");
+  };
+
+  const { data: session, status } = useSession();
 
   return (
     <header className="flex justify-between items-center px-10 bg-gradient-to-b from-neutral-400 to-white ">
@@ -68,7 +72,17 @@ export function Header(props: HeaderProps) {
       </form>
 
       <nav className="flex">
-        <HeaderButton img={UserIcon.src} text="Login" altText="User Icon Img" login={handleLogin} />
+        {status === "authenticated" ? (
+          <LoggedInBtn/>
+        ) : (
+          <HeaderButton
+            img={UserIcon.src}
+            text="Login"
+            altText="User Icon Img"
+            login={handleLogin}
+          />
+        )}
+
         <HeaderButton img={Decks.src} text="Decks" altText="Decks Img" />
       </nav>
     </header>
