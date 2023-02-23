@@ -13,8 +13,8 @@ export function LoggedInBtn() {
       onClick={() => signOut()}
       className=" first:mr-4 text-sm font-medium w-28 h-12 flex items-center justify-center bg-neutral-200 hover:bg-neutral-300 transition-all rounded-full drop-shadow-md"
     >
-      Hello! {userName}
-      <img src={close.src} alt="Logout btn" className="w-6 h-6 ml-2" />
+      Hello, {userName}!
+      <img src={close.src} alt="Logout btn" className="w-5 h-5 mr-3" />
     </button>
   );
 }
